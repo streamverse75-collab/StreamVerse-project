@@ -1,0 +1,272 @@
+.account-container {
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  min-height: 100vh;
+  color: white;
+}
+.account-content {
+  padding-top: 90px;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.account-content h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.account-layout {
+  display: flex;
+  gap: 30px;
+}
+.account-sidebar {
+  width: 220px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.account-sidebar p {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #aaa;
+  transition: all 0.2s;
+  margin-bottom: 5px;
+}
+.account-sidebar p:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+.account-sidebar p.active {
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  border-left: 3px solid #00d4ff;
+}
+.account-main {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.account-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.profile-pic-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.account-profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00d4ff;
+}
+.account-name {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.account-email {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.account-hint {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.account-hint span {
+  color: #00d4ff;
+  font-weight: 600;
+}
+.account-input {
+  width: 100%;
+  height: 48px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+.account-input:focus { border-color: #00d4ff; }
+.account-input::placeholder { color: #666; }
+.forgot-password-link {
+  color: #00d4ff;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: -5px;
+  transition: color 0.2s;
+  display: block;
+}
+.forgot-password-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+.account-btn {
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 5px;
+}
+.account-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+}
+.account-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.subscription-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.subscription-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: #aaa;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.subscription-desc { color: #ccc; margin-bottom: 15px; }
+.subscription-features { list-style: none; margin-bottom: 25px; }
+.subscription-features li { padding: 6px 0; color: #aaa; font-size: 14px; }
+.subscription-premium {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(0, 212, 255, 0.1));
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(155, 89, 182, 0.3);
+}
+.subscription-premium h3 { margin-bottom: 12px; color: #ffdd57; }
+.subscription-premium ul { list-style: none; margin-bottom: 20px; }
+.subscription-premium ul li { padding: 5px 0; color: #ccc; font-size: 14px; }
+.plan-options { display: flex; gap: 15px; margin-bottom: 20px; }
+.plan-option {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.plan-option:hover { border-color: #00d4ff; }
+.plan-option.selected {
+  border-color: #ffdd57;
+  background: rgba(255, 221, 87, 0.1);
+}
+.plan-name { font-size: 13px; color: #aaa; margin-bottom: 5px; }
+.plan-price { font-size: 22px; font-weight: 700; color: white; }
+.plan-price span { font-size: 13px; color: #aaa; }
+.plan-save { font-size: 11px; color: #00d4ff; margin-top: 4px; font-weight: 600; }
+.premium-btn {
+  background: linear-gradient(135deg, #ffdd57, #f39c12) !important;
+  color: #000 !important;
+}
+.premium-btn:hover { box-shadow: 0 5px 20px rgba(255, 221, 87, 0.3) !important; }
+.payment-form {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.payment-form h3 { margin-bottom: 5px; font-size: 1.2rem; }
+.payment-plan-info { color: #aaa; font-size: 13px; margin-bottom: 20px; }
+.payment-plan-info span { color: #ffdd57; font-weight: 600; }
+.card-preview {
+  background: linear-gradient(135deg, #1a0040, #0d0030);
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  min-height: 100px;
+}
+.card-preview-number {
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: white;
+  margin-bottom: 20px;
+  font-family: monospace;
+}
+.card-preview-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 13px;
+}
+.payment-row { display: flex; gap: 15px; }
+.payment-row .account-input { flex: 1; }
+.payment-buttons { display: flex; gap: 15px; margin-top: 10px; }
+.cancel-btn {
+  background: rgba(255,255,255,0.1) !important;
+  color: white !important;
+}
+.cancel-btn:hover {
+  background: rgba(255,255,255,0.2) !important;
+  box-shadow: none !important;
+}
+.payment-note {
+  color: #666;
+  font-size: 12px;
+  margin-top: 15px;
+  text-align: center;
+}
+.subscribed-card {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(0, 212, 255, 0.1));
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(155, 89, 182, 0.4);
+}
+.subscribed-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffdd57, #f39c12);
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.subscribed-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #ffdd57; }
+.subscribed-thankyou { color: #00d4ff; margin-top: 15px; font-size: 14px; }
+.delete-warning {
+  background: rgba(229, 9, 20, 0.1);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  color: #ff6b6b;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.delete-btn { background: linear-gradient(135deg, #e50914, #b0060f) !important; }
+.delete-btn:hover { box-shadow: 0 5px 20px rgba(229, 9, 20, 0.3) !important; }
+@media (max-width: 768px) {
+  .account-layout { flex-direction: column; }
+  .account-sidebar { width: 100%; display: flex; flex-wrap: wrap; gap: 5px; }
+  .account-content { padding-left: 15px; padding-right: 15px; }
+}

@@ -1,0 +1,80 @@
+.title-cards {
+  margin-bottom: 30px;
+}
+
+.title-cards h2 {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0 20px;
+  scrollbar-width: none;
+}
+
+.card-list::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  min-width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.card img {
+  width: 200px;
+  border-radius: 6px;
+}
+
+.card p {
+  color: white;
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ---- ADD TO LIST BUTTON ---- */
+.add-to-list-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.card:hover .add-to-list-btn {
+  display: flex;
+}
+
+.add-to-list-btn:hover {
+  background: #e50914;
+}

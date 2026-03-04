@@ -1,0 +1,80 @@
+.tv-container {
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  min-height: 100vh;
+  color: white;
+}
+
+.tv-content {
+  padding-top: 100px;
+  padding-left: 20px;
+}
+
+.tv-title {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.tv-container h2 {
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.row::-webkit-scrollbar {
+  height: 4px;
+}
+
+.row::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 4px;
+}
+
+.row img {
+  width: 200px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.row img:hover {
+  transform: scale(1.08);
+}
+
+.tv-card-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tv-add-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background 0.2s;
+}
+
+.tv-card-wrapper:hover .tv-add-btn {
+  display: flex;
+}
+
+.tv-add-btn:hover {
+  background: #e50914;
+}

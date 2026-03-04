@@ -1,0 +1,102 @@
+.notfound-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.notfound-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.notfound-code {
+  font-size: 10rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #00d4ff, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.3));
+}
+
+.notfound-glow {
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00d4ff, #9b59b6, transparent);
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.notfound-desc {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.notfound-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.notfound-btn {
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.notfound-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.notfound-btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.3);
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.notfound-btn-outline:hover {
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+.notfound-star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}

@@ -1,0 +1,108 @@
+.new-container {
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  min-height: 100vh;
+  color: white;
+}
+.new-content {
+  padding-top: 100px;
+  padding-left: 20px;
+}
+
+.new-content h1 {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.new-container h2 {
+  margin-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.new-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+.new-row::-webkit-scrollbar {
+  height: 4px;
+}
+
+.new-row::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 4px;
+}
+
+.new-card-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.new-card {
+  min-width: 160px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #141414;
+}
+
+.new-card:hover {
+  transform: scale(1.08);
+}
+
+.new-card img {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+}
+
+.new-card-info {
+  padding: 8px;
+}
+
+.new-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.new-card-rating {
+  font-size: 11px;
+  color: #ffdd57;
+  margin: 4px 0 0 0;
+}
+
+.new-add-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background 0.2s;
+}
+
+.new-card-wrapper:hover .new-add-btn {
+  display: flex;
+}
+
+.new-add-btn:hover {
+  background: #e50914;
+}

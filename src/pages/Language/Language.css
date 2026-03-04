@@ -1,0 +1,119 @@
+.language-container {
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  min-height: 100vh;
+  color: white;
+}
+.language-content {
+  padding-top: 100px;
+  padding-left: 20px;
+}
+
+.language-content h1 {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.language-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 10px 30px 10px;
+}
+
+.lang-btn {
+  background: #1a1a1a;
+  color: white;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  background: #333;
+  border-color: #e50914;
+}
+
+.lang-btn.active {
+  background: #e50914;
+  border-color: #e50914;
+  font-weight: 700;
+}
+
+.lang-placeholder {
+  text-align: center;
+  padding: 80px 20px;
+  color: #aaa;
+  font-size: 1.3rem;
+}
+
+.lang-loading {
+  text-align: center;
+  padding: 50px;
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+.lang-empty {
+  color: #aaa;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.language-container h2 {
+  margin-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.lang-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+.lang-row::-webkit-scrollbar { height: 4px; }
+.lang-row::-webkit-scrollbar-thumb { background: #e50914; border-radius: 4px; }
+
+.lang-card-wrapper {
+  position: relative;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.lang-card-wrapper img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.lang-card-wrapper:hover img { transform: scale(1.05); }
+
+.lang-add-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background 0.2s;
+}
+
+.lang-card-wrapper:hover .lang-add-btn { display: flex; }
+.lang-add-btn:hover { background: #e50914; }

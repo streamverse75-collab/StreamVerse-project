@@ -1,0 +1,111 @@
+.mylist-container {
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  min-height: 100vh;
+  color: white;
+}
+.mylist-content {
+  padding-top: 100px;
+  padding-left: 20px;
+}
+
+.mylist-content h1 {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.mylist-loading, .mylist-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #aaa;
+}
+
+.mylist-empty p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.mylist-empty button {
+  margin-top: 20px;
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mylist-empty button:hover {
+  background: #b0060f;
+}
+
+.mylist-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.mylist-card {
+  width: 160px;
+  background: #141414;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.mylist-card:hover {
+  transform: scale(1.05);
+}
+
+.mylist-card img {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.mylist-card-info {
+  padding: 8px;
+}
+
+.mylist-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mylist-card-type {
+  font-size: 11px;
+  color: #aaa;
+  margin: 3px 0;
+}
+
+.mylist-card-rating {
+  font-size: 11px;
+  color: #ffdd57;
+  margin: 3px 0;
+}
+
+.mylist-remove-btn {
+  width: 100%;
+  margin-top: 6px;
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mylist-remove-btn:hover {
+  background: #b0060f;
+}

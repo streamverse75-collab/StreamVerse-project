@@ -1,0 +1,79 @@
+.continue-watching {
+  margin-bottom: 30px;
+}
+
+.continue-watching h2 {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cw-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0 20px;
+  scrollbar-width: none;
+}
+
+.cw-list::-webkit-scrollbar {
+  display: none;
+}
+
+.cw-card {
+  position: relative;
+  min-width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.cw-card:hover {
+  transform: scale(1.08);
+}
+
+.cw-card img {
+  width: 200px;
+  border-radius: 6px;
+}
+
+.cw-card p {
+  color: white;
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cw-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.cw-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.cw-card:hover .cw-remove {
+  display: flex;
+}
+
+.cw-remove:hover {
+  background: #e50914;
+}

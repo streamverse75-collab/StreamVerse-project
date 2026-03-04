@@ -1,0 +1,120 @@
+.mood-container {
+  background: linear-gradient(135deg, #0a0015, #0d0030, #0a001a);
+  min-height: 100vh;
+  color: white;
+}
+.mood-content {
+  padding-top: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.mood-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.mood-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.mood-hero p {
+  color: #aaa;
+  font-size: 16px;
+}
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.mood-card {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.mood-card:hover {
+  border-color: var(--mood-color);
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.mood-card.selected {
+  border-color: var(--mood-color);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+.mood-emoji { font-size: 2.5rem; }
+.mood-label {
+  color: #ccc;
+  font-size: 13px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+.mood-results h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+.mood-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+  padding: 10px;
+}
+.mood-row::-webkit-scrollbar { height: 4px; }
+.mood-row::-webkit-scrollbar-thumb { background: #00d4ff; border-radius: 4px; }
+.mood-movie-card {
+  min-width: 160px;
+  position: relative;
+}
+.mood-movie-card img {
+  width: 160px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 2px solid transparent;
+}
+.mood-movie-card:hover img {
+  transform: scale(1.05);
+  border-color: #00d4ff;
+}
+.mood-add-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.mood-movie-card:hover .mood-add-btn { display: flex; }
+.mood-movie-title {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 160px;
+}
+.mood-movie-rating {
+  font-size: 11px;
+  color: #ffdd57;
+  margin-top: 3px;
+}
+@media (max-width: 768px) {
+  .mood-grid { grid-template-columns: repeat(4, 1fr); }
+  .mood-content { padding-left: 15px; padding-right: 15px; }
+}

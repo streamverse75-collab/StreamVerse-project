@@ -70,7 +70,7 @@ const MyList = () => {
           </div>
         )}
       </div>
-      <ScrollToTop/>background: linear-gradient(135deg, #00d4ff, #0099cc);
+      <ScrollToTop/>
     </div>
   )
 }

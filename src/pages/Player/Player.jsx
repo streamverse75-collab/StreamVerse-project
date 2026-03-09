@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Player.css'
 import { useParams, useNavigate } from 'react-router-dom';
 import { auth, addToContinueWatching } from '../../firebase'
@@ -7,6 +7,7 @@ const Player = () => {
 
   const {type, id} = useParams();
   const navigate = useNavigate();
+  const savedRef = useRef(false);
 
   const [apiData, setApiData] = useState(null);
   const [movieData, setMovieData] = useState(null);
@@ -23,6 +24,7 @@ const Player = () => {
 
   useEffect(() => {
     if(!id) return;
+    savedRef.current = false;
     setLoading(true);
     setError(null);
 
@@ -39,8 +41,9 @@ const Player = () => {
       setApiData(videoData);
       setMovieData(movieRes);
 
-      // Save to Continue Watching
-      if(auth.currentUser) {
+      // Save to Continue Watching - only once
+      if(auth.currentUser && !savedRef.current) {
+        savedRef.current = true;
         addToContinueWatching(auth.currentUser.uid, {
           id: id,
           title: movieRes.title || movieRes.name,
@@ -168,4 +171,4 @@ const Player = () => {
   )
 }
 
-export default Player 
+export default Player

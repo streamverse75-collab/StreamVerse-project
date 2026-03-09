@@ -32,78 +32,56 @@ const Movies = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const popularRes = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options);
-      const popularData = await popularRes.json();
-      const popularResults = popularData.results;
-      setPopular(popularResults);
-
-      const topRatedRes = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
-      const topRatedData = await topRatedRes.json();
-      const topRatedResults = topRatedData.results;
-      setTopRated(topRatedResults);
-
-      const trendingRes = await fetch('https://api.themoviedb.org/3/trending/movie/week?language=en-US', options);
-      const trendingData = await trendingRes.json();
-      const trendingResults = trendingData.results;
-      setTrending(trendingResults);
-
-      const usedIds = new Set([
-        ...popularResults.map(m => m.id),
-        ...topRatedResults.map(m => m.id),
-        ...trendingResults.map(m => m.id),
+      const [
+        popularData, topRatedData, trendingData, upcomingData,
+        nowPlayingData, actionData, comedyData, horrorData, scifiData, romanceData
+      ] = await Promise.all([
+        fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/trending/movie/week?language=en-US', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=2', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=2', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/discover/movie?with_genres=28&language=en-US&page=1', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/discover/movie?with_genres=35&language=en-US&page=1', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/discover/movie?with_genres=27&language=en-US&page=1', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/discover/movie?with_genres=878&language=en-US&page=1', options).then(r => r.json()),
+        fetch('https://api.themoviedb.org/3/discover/movie?with_genres=10749&language=en-US&page=1', options).then(r => r.json()),
       ]);
 
-      const upcomingRes = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=2', options);
-      const upcomingData = await upcomingRes.json();
-      const upcomingResults = upcomingData.results.filter(m => !usedIds.has(m.id));
-      setUpcoming(upcomingResults);
-      upcomingResults.forEach(m => usedIds.add(m.id));
-
-      const nowPlayingRes = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=2', options);
-      const nowPlayingData = await nowPlayingRes.json();
-      const nowPlayingResults = nowPlayingData.results.filter(m => !usedIds.has(m.id));
-      setNowPlaying(nowPlayingResults);
-      nowPlayingResults.forEach(m => usedIds.add(m.id));
-
-      const actionRes = await fetch('https://api.themoviedb.org/3/discover/movie?with_genres=28&language=en-US&page=1', options);
-      const actionData = await actionRes.json();
-      setAction(actionData.results.filter(m => !usedIds.has(m.id)));
-
-      const comedyRes = await fetch('https://api.themoviedb.org/3/discover/movie?with_genres=35&language=en-US&page=1', options);
-      const comedyData = await comedyRes.json();
-      setComedy(comedyData.results.filter(m => !usedIds.has(m.id)));
-
-      const horrorRes = await fetch('https://api.themoviedb.org/3/discover/movie?with_genres=27&language=en-US&page=1', options);
-      const horrorData = await horrorRes.json();
-      setHorror(horrorData.results.filter(m => !usedIds.has(m.id)));
-
-      const scifiRes = await fetch('https://api.themoviedb.org/3/discover/movie?with_genres=878&language=en-US&page=1', options);
-      const scifiData = await scifiRes.json();
-      setScifi(scifiData.results.filter(m => !usedIds.has(m.id)));
-
-      const romanceRes = await fetch('https://api.themoviedb.org/3/discover/movie?with_genres=10749&language=en-US&page=1', options);
-      const romanceData = await romanceRes.json();
-      setRomance(romanceData.results.filter(m => !usedIds.has(m.id)));
-
+      setPopular(popularData.results);
+      setTopRated(topRatedData.results);
+      setTrending(trendingData.results);
+      setUpcoming(upcomingData.results);
+      setNowPlaying(nowPlayingData.results);
+      setAction(actionData.results);
+      setComedy(comedyData.results);
+      setHorror(horrorData.results);
+      setScifi(scifiData.results);
+      setRomance(romanceData.results);
       setPageLoading(false);
     };
     fetchData();
   }, []);
 
   const renderRow = (data, type = 'movie') => (
-    <div className="row">
-      {data.map(movie => (
+  <div className="row">
+    {data.slice(0, 15).map(movie => (
+      movie.poster_path && (
         <div key={movie.id} className="movie-card-wrapper">
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}
-            onClick={() => navigate(`/player/${type}/${movie.id}`)} />
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={movie.title}
+            onClick={() => navigate(`/player/${type}/${movie.id}`)}
+          />
           <button className="movie-add-btn" onClick={async () => {
             const user = auth.currentUser;
             if(user) await addToMyList(user.uid, {...movie, type});
           }}>➕</button>
         </div>
-      ))}
-    </div>
-  )
+      )
+    ))}
+  </div>
+)
 
   return (
     <div className='movies-container'>
@@ -140,8 +118,9 @@ const Movies = () => {
 
         <h2>Romance</h2>
         {pageLoading ? <Skeleton count={8}/> : renderRow(romance)}
+
       </div>
-       <ScrollToTop/>background: linear-gradient(135deg, #00d4ff, #0099cc);
+      <ScrollToTop/>
     </div>
   )
 }
